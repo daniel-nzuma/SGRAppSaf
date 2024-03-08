@@ -1,0 +1,6 @@
+framework module Pods_SGRAppSaf {
+  umbrella header "Pods-SGRAppSaf-umbrella.h"
+
+  export *
+  module * { export * }
+}
