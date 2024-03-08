@@ -106,16 +106,13 @@ class ViewController: UIViewController {
 //        //
         
         
-        for booking in bookingsList
-        {
+        for booking in bookingsList {
             var startStation = booking.startStation
-            var exitStation = booking.exitStation
+            let exitStation = booking.exitStation
 
-            while(startStation < exitStation)
-            {
-                var currentBookingCount = stationsIDAndCountDictionary[startStation]
-                stationsIDAndCountDictionary[startStation] = (currentBookingCount ?? 0) + 1; //
-                startStation += 1;
+            for station in stride(from: startStation, to: exitStation, by: 1) {
+                var currentBookingCount = stationsIDAndCountDictionary[station]
+                stationsIDAndCountDictionary[station] = (currentBookingCount ?? 0) + 1
             }
         }
         
